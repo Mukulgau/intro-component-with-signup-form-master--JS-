@@ -1,0 +1,172 @@
+$red: hsl(0, 100%, 74%);
+$green: hsl(154, 59%, 51%);
+$blue: hsl(248, 32%, 51%);
+$dark-blue: hsl(249, 10%, 26%);
+$grayish-blue: hsl(246, 25%, 77%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: $red;
+  background-image: url("./images/bg-intro-desktop.png") !important;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 75px 20px;
+  }
+
+  div {
+    flex: 1;
+    padding: 0 20px;
+
+    @media (max-width: 768px) {
+      padding: 0 0;
+    }
+  }
+  h1 {
+    font-size: 40px;
+    line-height: 50px;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      font-size: 25px;
+      line-height: 35px;
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    opacity: 0.8;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+  }
+
+  .box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 6px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      padding: 25px 15px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .form-control {
+      margin-bottom: 20px;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        opacity: 0;
+      }
+
+      small {
+        color: $red;
+        position: absolute;
+        bottom: -20px;
+        right: 30px;
+        opacity: 0;
+        text-align: right;
+        font-weight: 600;
+      }
+
+      input {
+        display: block;
+        border-radius: 5px;
+        padding: 15px 25px;
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+        border: 1.3px solid $grayish-blue;
+      }
+      input:focus {
+        border: 1.3px solid $blue;
+        outline: none;
+      }
+    }
+    .form-control.error input {
+      border-color: $red;
+      color: $red;
+    }
+    .form-control.error input::placeholder {
+      color: $red;
+    }
+
+    .form-control.error img {
+      opacity: 1;
+    }
+
+    button {
+      background-color: $green;
+      color: #fff;
+      width: 100%;
+      display: block;
+      border-radius: 5px;
+      border: 1px solid hsl(154, 59%, 45%);
+      box-shadow: 0 2px hsl(154, 59%, 45%);
+      font-family: "Poppins", sans-serif;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 15px 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    button:focus {
+      outline: none;
+    }
+    button:active {
+      box-shadow: 0 0 hsl(154, 59%, 45%);
+      transform: translateY(2px);
+    }
+
+    small {
+      display: block;
+      color: #bbb;
+      font-size: 11px;
+      font-weight: 500;
+      margin-top: 15px;
+
+      a {
+        color: $red;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .box-blue {
+    background-color: $blue;
+    padding: 20px;
+  }
+}
